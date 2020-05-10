@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iconIv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:src="@drawable/splash_screen_icon" />
+
+    <TextView
+        style="@style/TitleTextStyle"
+        android:id="@+id/descTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:text="@string/login_screen_desc" />
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/firstNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:singleLine="true"
+        android:hint="@string/first_name_hint_login" />
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/lastNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:singleLine="true"
+        android:hint="@string/last_name_hint_login" />
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/hospitalNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:singleLine="true"
+        android:hint="@string/hospital_name_hint_login" />
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/pinEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="90dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:hint="@string/pin_hint_login"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/signUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginHorizontal="90dp"
+        android:gravity="center"
+        android:text="@string/sign_up_login"/>
+
+</LinearLayout>

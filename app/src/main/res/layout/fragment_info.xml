@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        style="@style/TitleTextStyle"
+        android:id="@+id/descTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:text="@string/fragment_info_desc"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/waitingPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@id/descTv"
+        app:layout_constraintBottom_toTopOf="@id/hospitalizedPatientsTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/fragment_waiting_patients_desc"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/hospitalizedPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/waitingPatientsTv"
+        app:layout_constraintBottom_toTopOf="@id/dischargedPatientsTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/fragment_hospitalized_patients_desc"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/dischargedPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hospitalizedPatientsTv"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/fragment_discharged_patients_desc"/>
+
+    <TextView
+        style="@style/NumberStyle"
+        android:id="@+id/numberOfWaitingPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/waitingPatientsTv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/iconYellow"
+        android:text="@string/fragment_default_patients_number"/>
+
+    <TextView
+        style="@style/NumberStyle"
+        android:id="@+id/numberOfHospitalizedPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalizedPatientsTv"
+        app:layout_constraintRight_toRightOf="@id/numberOfWaitingPatientsTv"
+        android:textColor="@color/iconRed"
+        android:text="@string/fragment_default_patients_number"/>
+
+    <TextView
+        style="@style/NumberStyle"
+        android:id="@+id/numberOfDischargedPatientsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/dischargedPatientsTv"
+        app:layout_constraintRight_toRightOf="@id/numberOfWaitingPatientsTv"
+        android:textColor="@color/iconGreen"
+        android:text="@string/fragment_default_patients_number"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

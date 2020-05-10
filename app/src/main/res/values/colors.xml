@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="splashBlue">#4896F3</color>
+    <color name="textColor">#CD000000</color>
+    <color name="hintColor">#999</color>
+    <color name="buttonTextColor">#C7C7C7</color>
+    <color name="buttonBackgroundColor">#CD000000</color>
+    <color name="iconBlack">#CD000000</color>
+    <color name="iconRed">#D81B16</color>
+    <color name="iconYellow">#E8CA56</color>
+    <color name="iconGreen">#6ED72C</color>
+    <color name="patientCardBackground">@android:color/white</color>
+</resources>

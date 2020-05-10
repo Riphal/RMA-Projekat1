@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        style="@style/TitleTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:text="@string/fragment_input_patients_title"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="64dp"
+        android:tint="@color/iconGreen"
+        android:src="@drawable/ic_input" />
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/firstNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:singleLine="true"
+        android:nextFocusDown="@id/lastNameEt"
+        android:hint="@string/first_name_hint_input_patients"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/lastNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:singleLine="true"
+        android:nextFocusDown="@id/symptomsEt"
+        android:hint="@string/last_name_hint_input_patients"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/symptomsEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:singleLine="true"
+        android:hint="@string/symptoms_hint_input_patients"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="90dp"
+        android:text="@string/fragment_input_patients_btn" />
+
+
+</LinearLayout>
