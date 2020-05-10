@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activities.PatientProfileActivity"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TitleTextStyle"
+        android:id="@+id/patientProfileTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/profileIv"
+        android:text="@string/activity_patient_file_desc"/>
+
+    <ImageView
+        android:id="@+id/profileIv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patientProfileTv"
+        app:layout_constraintBottom_toTopOf="@id/firstNameEt"
+        android:src="@drawable/ic_patient_file"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/firstNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:nextFocusDown="@id/lastNameEt"
+        app:layout_constraintTop_toTopOf="@id/profileIv"
+        app:layout_constraintBottom_toTopOf="@id/lastNameEt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        android:hint="@string/first_name_hint_input_patients"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/lastNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/firstNameEt"
+        app:layout_constraintBottom_toTopOf="@id/stateOnAdmissionTv"
+        app:layout_constraintStart_toStartOf="@id/firstNameEt"
+        android:layout_marginHorizontal="16dp"
+        android:singleLine="true"
+        android:nextFocusDown="@id/stateOnAdmissionEt"
+        android:hint="@string/last_name_hint_input_patients"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/stateOnAdmissionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lastNameEt"
+        app:layout_constraintBottom_toTopOf="@id/stateOnAdmissionEt"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/activity_patient_state_on_admission"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/stateOnAdmissionEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/stateOnAdmissionTv"
+        app:layout_constraintBottom_toTopOf="@id/currentStateTv"
+        android:nextFocusDown="@id/currentStateEt"
+        android:layout_marginHorizontal="16dp"
+        android:singleLine="true"
+        android:hint="@string/activity_patient_state_on_admission"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/currentStateTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/stateOnAdmissionEt"
+        app:layout_constraintBottom_toTopOf="@id/currentStateEt"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/activity_patient_current_state"/>
+
+    <EditText
+        style="@style/TextStyle"
+        android:id="@+id/currentStateEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/currentStateTv"
+        app:layout_constraintBottom_toBottomOf="@id/dateLabelOfAdmissionTv"
+        android:layout_marginHorizontal="16dp"
+        android:singleLine="true"
+        android:hint="@string/activity_patient_current_state"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/dateLabelOfAdmissionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/currentStateEt"
+        app:layout_constraintBottom_toTopOf="@id/dateOfAdmissionTv"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/activity_patient_date_of_admission"/>
+
+    <TextView
+        style="@style/TextStyle"
+        android:id="@+id/dateOfAdmissionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dateLabelOfAdmissionTv"
+        app:layout_constraintBottom_toTopOf="@id/cancelBtn"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/activity_patient_date_of_admission"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/cancelBtn"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dateOfAdmissionTv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/dateOfAdmissionTv"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/fragment_profile_edit_cancel_btn"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/changeBtn"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/cancelBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:text="@string/fragment_profile_edit_btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

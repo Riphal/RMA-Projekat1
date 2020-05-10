@@ -51,5 +51,9 @@
     <string name="fragment_profile_edit_btn">Izmeni</string>
     <string name="fragment_profile_signOut_btn">Odjava</string>
     <string name="fragment_profile_edit_cancel_btn">Odustani</string>
+    <string name="activity_patient_file_desc">Karton pacijenta</string>
+    <string name="activity_patient_state_on_admission">Stanje pri prijemu</string>
+    <string name="activity_patient_current_state">Trenutno stanje</string>
+    <string name="activity_patient_date_of_admission">Datum prijema</string>
 
 </resources>

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_hospitalized_list.*
 import rs.raf.projekat1.boris_jankovic_rn3317.R
 import rs.raf.projekat1.boris_jankovic_rn3317.model.Patient
-import rs.raf.projekat1.boris_jankovic_rn3317.view.activities.PatientProfileActivity
+import rs.raf.projekat1.boris_jankovic_rn3317.view.activities.PatientFileActivity
 import rs.raf.projekat1.boris_jankovic_rn3317.view.recycler.adapter.PatientHospitalizedAdapter
 import rs.raf.projekat1.boris_jankovic_rn3317.view.recycler.diff.PatientDiffItemCallback
 import rs.raf.projekat1.boris_jankovic_rn3317.viewmodels.RecyclerViewModel
@@ -43,8 +43,8 @@ class HospitalizedListFragment : Fragment(R.layout.fragment_hospitalized_list) {
     private val onFileButtonClick: (Patient) -> Unit = {
         this.patient = it
 
-        val intent = Intent(this.context, PatientProfileActivity::class.java)
-        intent.putExtra(PatientProfileActivity.PATIENT_KEY, it)
+        val intent = Intent(this.context, PatientFileActivity::class.java)
+        intent.putExtra(PatientFileActivity.PATIENT_KEY, it)
 
         startActivityForResult(intent, PATIENT_CHANGE_PROFILE_REQUEST_CODE)
     }
@@ -55,8 +55,7 @@ class HospitalizedListFragment : Fragment(R.layout.fragment_hospitalized_list) {
         when (requestCode) {
             PATIENT_CHANGE_PROFILE_REQUEST_CODE -> {
                 if (resultCode == Activity.RESULT_OK) {
-
-                    val receivedPatient: Patient? = data?.getParcelableExtra(PatientProfileActivity.PATIENT_KEY)
+                    val receivedPatient: Patient? = data?.getParcelableExtra(PatientFileActivity.PATIENT_KEY)
 
                     this.patient.firstName = receivedPatient?.firstName ?: ""
                     this.patient.lastName = receivedPatient?.lastName ?: ""

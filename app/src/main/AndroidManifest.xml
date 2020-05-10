@@ -20,5 +20,6 @@
         <activity android:name=".view.activities.LoginActivity" />
         <activity android:name=".view.activities.MainActivity" />
         <activity android:name=".view.activities.EditProfileActivity" />
+        <activity android:name=".view.activities.PatientFileActivity" />
     </application>
 </manifest>
