@@ -60,7 +60,7 @@ class InputPatientFragment : Fragment(R.layout.fragment_input_patient) {
                     null
                 )
 
-                recyclerViewModel.addWaitingPatient(patient)
+                recyclerViewModel.addPatient(recyclerViewModel.getWaitingPatientsList(), recyclerViewModel.getWaitingPatients(), patient)
 
                 firstNameEt.setText("")
                 lastNameEt.setText("")

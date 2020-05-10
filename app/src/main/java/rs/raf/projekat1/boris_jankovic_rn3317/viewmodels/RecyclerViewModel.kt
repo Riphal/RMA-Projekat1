@@ -13,8 +13,8 @@ class RecyclerViewModel : ViewModel() {
     private val hospitalizedPatients : MutableLiveData<List<Patient>> = MutableLiveData()
     private val hospitalizedPatientsList : MutableList<Patient> = mutableListOf()
 
-    private val recoveredPatients : MutableLiveData<List<Patient>> = MutableLiveData()
-    private val recoveredPatientsList : MutableList<Patient> = mutableListOf()
+    private val dischargedPatients : MutableLiveData<List<Patient>> = MutableLiveData()
+    private val dischargedPatientsList : MutableList<Patient> = mutableListOf()
 
     init {
         for(i in 1..10) {
@@ -37,7 +37,7 @@ class RecyclerViewModel : ViewModel() {
         waitingPatients.value = listToSubmit
     }
 
-    fun getWaitingPatients() : LiveData<List<Patient>> {
+    fun getWaitingPatients() : MutableLiveData<List<Patient>> {
         return waitingPatients
     }
 
@@ -45,37 +45,53 @@ class RecyclerViewModel : ViewModel() {
         return waitingPatientsList
     }
 
+    fun getHospitalizedPatients() : MutableLiveData<List<Patient>>{
+        return hospitalizedPatients
+    }
+
+    fun getHospitalizedPatientList(): MutableList<Patient> {
+        return hospitalizedPatientsList
+    }
+
+    fun getDischargedPatients() : MutableLiveData<List<Patient>>{
+        return dischargedPatients
+    }
+
+    fun getDischargedPatientsList(): MutableList<Patient> {
+        return dischargedPatientsList
+    }
+
     fun getNextId(): Int {
         return (waitingPatients.value?.size ?: 0) +
                 (hospitalizedPatients.value?.size ?: 0) +
-                (recoveredPatients.value?.size ?: 0) + 1
+                (dischargedPatients.value?.size ?: 0) + 1
     }
 
-    fun filterWaitingPatients (filter : String) {
-        val filteredList = waitingPatientsList.filter {
+    fun filterPatients (list : MutableList<Patient>, liveList : MutableLiveData<List<Patient>>, filter : String) {
+        val filteredList = list.filter {
             it.firstName.toLowerCase().startsWith(filter.toLowerCase()) ||
             it.lastName.toLowerCase().startsWith(filter.toLowerCase())
         }
 
-        waitingPatients.value = filteredList;
+        liveList.value = filteredList;
     }
 
-    fun removeWaitingPatient (patient: Patient) {
-        waitingPatientsList.remove(patient)
+    fun removePatient (list : MutableList<Patient>, liveList : MutableLiveData<List<Patient>>, patient: Patient) {
+        list.remove(patient)
 
         val listToSubmit = mutableListOf<Patient>()
-        listToSubmit.addAll(waitingPatientsList)
+        listToSubmit.addAll(list)
 
-        waitingPatients.value = listToSubmit
+        liveList.value = listToSubmit
     }
 
-    fun addWaitingPatient (patient : Patient) {
-        waitingPatientsList.add(patient)
+    fun addPatient (list : MutableList<Patient>, liveList : MutableLiveData<List<Patient>>, patient : Patient) {
+        list.add(patient)
 
         val listToSubmit = mutableListOf<Patient>()
-        listToSubmit.addAll(waitingPatientsList)
+        listToSubmit.addAll(list)
 
-        waitingPatients.value = listToSubmit
+        liveList.value = listToSubmit
     }
 
 }

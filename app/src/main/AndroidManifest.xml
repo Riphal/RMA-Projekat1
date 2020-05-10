@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rs.raf.projekat1.boris_jankovic_rn3317">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".application.Projekat1Application"

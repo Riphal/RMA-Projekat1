@@ -33,14 +33,14 @@ class WaitingListFragment : Fragment(R.layout.fragment_waiting_list) {
 
     private val onHealthyBtnClicked : (Patient) -> Unit = {
         it.releasedDate = Date()
-        recyclerViewModel.removeWaitingPatient(it)
-//        recyclerViewModel.addRecoveredPatient(it)
+        recyclerViewModel.removePatient(recyclerViewModel.getWaitingPatientsList(), recyclerViewModel.getWaitingPatients(), it)
+        recyclerViewModel.addPatient(recyclerViewModel.getDischargedPatientsList(), recyclerViewModel.getDischargedPatients(), it)
     }
 
     private val onHospitalizeBtnClicked : (Patient) -> Unit = {
         it.hospitalizationDate = Date()
-        recyclerViewModel.removeWaitingPatient(it)
-//        recyclerViewModel.addHospitalizedPatient(it)
+        recyclerViewModel.removePatient(recyclerViewModel.getWaitingPatientsList(), recyclerViewModel.getWaitingPatients(), it)
+        recyclerViewModel.addPatient(recyclerViewModel.getHospitalizedPatientList(), recyclerViewModel.getHospitalizedPatients(), it)
     }
 
     private fun initRecycler() {
@@ -50,16 +50,18 @@ class WaitingListFragment : Fragment(R.layout.fragment_waiting_list) {
     }
 
     private fun initListeners() {
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener, android.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                recyclerViewModel.filterWaitingPatients(searchView.query.toString())
-                return false
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    recyclerViewModel.filterPatients(recyclerViewModel.getWaitingPatientsList(), recyclerViewModel.getWaitingPatients(), searchView.query.toString())
+                    return false
+                }
             }
-        })
+        )
     }
 
     private fun initObservers() {

@@ -27,12 +27,12 @@ class InfoFragment: Fragment(R.layout.fragment_info) {
             numberOfWaitingPatientsTv.text = recyclerViewModel.getWaitingPatientsList().size.toString()
         })
 
-//        recyclerViewModel.getHospitalizedPatients().observe(viewLifecycleOwner, Observer {
-//            brojHospitalizovanihPacijenataTv1.text = recyclerViewModel.getHospitalizedPatientList().size.toString()
-//        })
-//
-//        recyclerViewModel.getRecoveredPatients().observe(viewLifecycleOwner, Observer {
-//            brojOtpustenihPacijenataTv1.text = recyclerViewModel.getRecoveredPatientsList().size.toString()
-//        })
+        recyclerViewModel.getHospitalizedPatients().observe(viewLifecycleOwner, Observer {
+            numberOfHospitalizedPatientsTv.text = recyclerViewModel.getHospitalizedPatientList().size.toString()
+        })
+
+        recyclerViewModel.getDischargedPatients().observe(viewLifecycleOwner, Observer {
+            numberOfDischargedPatientsTv.text = recyclerViewModel.getDischargedPatientsList().size.toString()
+        })
     }
 }

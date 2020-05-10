@@ -35,7 +35,6 @@ class PatientWaitingViewHolder (
         firstNameTv.text = patient.firstName
         lastNameTv.text = patient.lastName
         symptomsTv.text = patient.symptoms
-
     }
 
 }
